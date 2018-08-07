@@ -8,29 +8,29 @@ Base = declarative_base()
 
 class Knowledge(Base):
 	# Create a table with 4 columns
-	def __init__(seld, Base):
-		__tablename__ = 'knowledge'
-		k_id = Column(Integer, primary_key=True)
-		name = Column(String)
-		topic = Column(String)
-		rating = Column(Integer)
+	#def __init__(self, Base):
+	__tablename__ = 'knowledge'
+	k_id = Column(Integer, primary_key=True)
+	name = Column(String)
+	topic = Column(String)
+	rating = Column(Integer)
 
 	def is_rainbow(self):
-		return self.topic == "wethear" and name == "Rainbow" and self.rating == 9 and self.k_id == 1
+		return self.topic == "weather" and self.name == "Rainbow" and self.rating == 9 and self.k_id == 1
 
-	def is_bad(self):
-		return self.rating <= 7
+	#def is_bad(self):
+	#	return self.rating < 7
 
 	
 #add_student("Mayuri", 2, True)
 
 	def __repr__(self):
 		
-		if is_rainbow():
-			return "If you want to learn about weather, you should look at the Wikipedia article called rainbow.\nWe gave this article a rating of 9 out of 10!"
+		if self.is_rainbow():
+			print("If you want to learn about weather, you should look at the Wikipedia article called rainbow.\nWe gave this article a rating of 9 out of 10!")
 		
-		elif is_bad():
-			return "Unfortunately, this article does not have a better rating. Maybe, this is an article that should be\nreplaced soon!."
+		#elif self.is_bad():
+		#	print("Unfortunately, this article does not have a better rating. Maybe, this is an article that should be\nreplaced soon!.")
 
 		return(("id: {}\narticle name: {}\n""article topic: {}\n""rating: {}\n").format(self.k_id, self.name, self.topic, self.rating))
 	# The first column will be the primary key
